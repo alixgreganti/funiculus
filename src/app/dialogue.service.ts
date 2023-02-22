@@ -37,8 +37,6 @@ export class Dialogue{
             return false
         }
     }
-
-    // These two functions were from ChatGPT because im lazy
     getAncestorByTrigger(trigger: String): Dialogue | null { // Looks at the above parents and tries to find a match
         if (this.trigger === trigger) {
             return this;

@@ -21,10 +21,14 @@ import { Dialogue } from './dialogue.service';
 export class AppComponent implements OnInit{
 
 
-  root : Dialogue = new Dialogue("Why do you hate cheese strings?")
-  bruh : Dialogue = new Dialogue("Bruh")
-  chillin : Dialogue = new Dialogue("Chilly AF")
-  naw: Dialogue = new Dialogue("Bruh nooo")
+  root : Dialogue = new Dialogue("Hi, im shawty")
+  // ADDING CHILDREN
+  // You cannot add children outside of a function, so you can either make static responses and assign them later
+  // or add the directly in ngOnInit, but its a tad harder to manage things that way
+  // ie avoid doing root.children[0].children[0].addChild(new Dialogue("This Sucks", "Does this suck?"))
+  bruh : Dialogue = new Dialogue("Fuck you hoe", "Excuse me?")
+  chillin : Dialogue = new Dialogue("Yea I think you are cute", "Do you think im cute?")
+  naw: Dialogue = new Dialogue("You should date me", "Im single")
 
   currentNode: Dialogue = this.root;
 
