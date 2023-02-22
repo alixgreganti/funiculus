@@ -12,8 +12,8 @@ import { Dialogue } from './dialogue.service';
         </li>
       </ul>
     </div>
-    <div *ngIf="currentNode === root">
-      <p>End of conversation</p>
+    <div *ngIf="currentNode.children.length == 0">
+      <p>No More Options</p>
     </div>
     <button *ngIf="currentNode !== root" (click)="goBack()">Go back</button>
   `,
