@@ -27,8 +27,7 @@ export class StoryComponent {
             .addDialogue("Choice 1").endOfBranch()
             .addDialogue("Choice 2").endOfBranch()
             .endOfBranch()
-          .addDialogue("Choice C")
-          .endOfBranch()
+          .addDialogue("Choice C").endOfBranch()
           .addDialogue("Choice D")
             .addDialogue("Choice E")
               .addDialogue("Choice F").endOfBranch()          
@@ -36,16 +35,16 @@ export class StoryComponent {
             .addDialogue("Choice G").endOfBranch()   
             .addDialogue("Choice H").endOfBranch()
           .endOfBranch()
-
+        .endOfBranch()
 
     /*
-      Start > A > B
+      Start > A > B > 1
+                    > 2
                 > C
                 > D > E > F
                     > G
                     > H
     */
-
 
     this.currentDialogue = rootDialogue;
   }
