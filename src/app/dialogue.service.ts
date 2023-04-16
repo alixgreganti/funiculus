@@ -6,9 +6,37 @@ export class Dialogue{
     message: String; // What this Dialogue will say ie: "Your phone number is xxx-xxx-xxxx"
     trigger: String; // When creating Dialogue, this will be the Dialogue is "asked" by the user, ie "What is my phone number?"
 
-    constructor(message: String, trigger: String = message){ // All Dialogue MUST have something to say
+    hasBeenRead: boolean = false; // Add a flag for whether the dialogue has been read
+    tag: String;
+
+    constructor(message: String, trigger: String = message, tag: String = ""){ // All Dialogue MUST have something to say
         this.message = message
         this.trigger = trigger // Defaults to be the same as the message if not set
+        this.tag = tag;
+    }
+
+    blankDialouge(){
+        return new Dialogue("BLANK","BLANK","BLANK");
+    }
+    
+    getDescendantByTag(tag: String): Dialogue {
+        if (this.tag === tag) {
+          return this;
+        }
+    
+        for (const child of this.children) {
+          const foundNode = child.getDescendantByTag(tag);
+          if (foundNode) {
+            return foundNode;
+          }
+        }
+
+        console.log("Tag not found")
+        return new Dialogue("BLANK","BLANK","BLANK");
+      }
+
+    read(){
+        this.hasBeenRead = true;
     }
 
     speak(){ // Outputs the Dialogue in console
