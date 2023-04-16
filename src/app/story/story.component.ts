@@ -24,25 +24,26 @@ export class StoryComponent {
       .fromNode(rootDialogue)
         .addDialogue("Choice A")
           .addDialogue("Choice B")
+            .addDialogue("Choice 1").endOfBranch()
+            .addDialogue("Choice 2").endOfBranch()
             .endOfBranch()
-        .addDialogue("Choice C")
+          .addDialogue("Choice C")
           .endOfBranch()
-        .addDialogue("Choice D")
-          .addDialogue("Choice E")
-            .addDialogue("Choice F")
-              .endOfBranch()
-            .endOfBranch()
-          .addDialogue("Choice G")
-            .endOfBranch()
-          .addDialogue("Choice H")
+          .addDialogue("Choice D")
+            .addDialogue("Choice E")
+              .addDialogue("Choice F").endOfBranch()          
+            .endOfBranch()          
+            .addDialogue("Choice G").endOfBranch()   
+            .addDialogue("Choice H").endOfBranch()
+          .endOfBranch()
 
 
     /*
       Start > A > B
-            > C
-            > D > E > F
-                > G
-                > H
+                > C
+                > D > E > F
+                    > G
+                    > H
     */
 
 
